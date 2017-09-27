@@ -2,6 +2,7 @@
 package com.idealcn.aidlstudy;
 
 // Declare any non-default types here with import statements
+//★★手动导入★★
 import com.idealcn.aidlstudy.bean.Student;
 interface IMyAidlInterface {
     /**

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.os.RemoteException;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
-            try {
-               int result =  iMyAidlInterface.add(10,10);
-
-                Toast.makeText(MainActivity.this,"result--"+result,Toast.LENGTH_SHORT).show();
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
+//            try {
+//               int result =  iMyAidlInterface.add(10,10);
+//
+//                Toast.makeText(MainActivity.this,"result--"+result,Toast.LENGTH_SHORT).show();
+//            } catch (RemoteException e) {
+//                e.printStackTrace();
+//            }
+            Toast.makeText(MainActivity.this,"bind success",Toast.LENGTH_SHORT).show();
         }
 
         @Override
