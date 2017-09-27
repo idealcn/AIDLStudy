@@ -7,6 +7,11 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 
+
+import com.idealcn.aidlstudy.bean.Student;
+
+import java.util.List;
+
 /**
  * Created by ideal-gn on 2017/9/27.
  */
@@ -15,7 +20,7 @@ public class MyService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return stub;
+        return null;
     }
 
 
@@ -33,6 +38,12 @@ public class MyService extends Service {
         @Override
         public void delete() throws RemoteException {
 
+        }
+
+        @Override
+        public List<Student> makeStudentList(){
+
+            return null;
         }
     };
 

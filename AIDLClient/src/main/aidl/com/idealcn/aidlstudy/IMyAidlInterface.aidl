@@ -2,7 +2,7 @@
 package com.idealcn.aidlstudy;
 
 // Declare any non-default types here with import statements
-
+import com.idealcn.aidlstudy.bean.Student;
 interface IMyAidlInterface {
     /**
      * Demonstrates some basic types that you can use as parameters
@@ -13,4 +13,5 @@ interface IMyAidlInterface {
 
             int add(int a,int b);
             void delete();
+            List<Student> makeStudentList();
 }

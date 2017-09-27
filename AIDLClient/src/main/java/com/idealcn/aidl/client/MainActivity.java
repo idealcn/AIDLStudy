@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
             try {
                int result =  iMyAidlInterface.add(10,10);
+
                 Toast.makeText(MainActivity.this,"result--"+result,Toast.LENGTH_SHORT).show();
             } catch (RemoteException e) {
                 e.printStackTrace();
