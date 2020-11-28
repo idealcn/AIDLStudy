@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 
 import com.idealcn.aidlstudy.bean.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,8 +43,9 @@ public class MyService extends Service {
 
         @Override
         public List<Student> makeStudentList(){
-
-            return null;
+            ArrayList<Student> students = new ArrayList<>();
+            students.add(new Student("john",15));
+            return students;
         }
     };
 

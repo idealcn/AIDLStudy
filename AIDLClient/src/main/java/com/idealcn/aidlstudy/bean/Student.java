@@ -8,7 +8,18 @@ import android.os.Parcelable;
  */
 
 public class Student implements Parcelable{
-    protected Student(Parcel in) {
+
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    private Student(Parcel in) {
+        name = in.readString();
+        age = in.readInt();
     }
 
     public static final Creator<Student> CREATOR = new Creator<Student>() {
@@ -30,5 +41,15 @@ public class Student implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(age);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

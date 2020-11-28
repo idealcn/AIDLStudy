@@ -6,12 +6,19 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
+import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.idealcn.aidlstudy.IMyAidlInterface;
+import com.idealcn.aidlstudy.bean.Student;
+
+import java.security.cert.CollectionCertStoreParameters;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Predicate;
 
 public class MainActivity extends AppCompatActivity {
     IMyAidlInterface iMyAidlInterface;
@@ -22,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    private ServiceConnection connection = new ServiceConnection() {
+    private final ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             iMyAidlInterface = IMyAidlInterface.Stub.asInterface(service);
@@ -54,5 +61,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbindService(connection);
+    }
+
+    public void add(View view) throws RemoteException {
+        int add = iMyAidlInterface.add(10, 20);
+        Toast.makeText(this, "add: "+add, Toast.LENGTH_SHORT).show();
+    }
+
+
+    public void getStudent(View view) throws RemoteException {
+        List<Student> students = iMyAidlInterface.makeStudentList();
+        for (Student student : students) {
+            System.out.println("student: =>"+student.toString());
+        }
     }
 }

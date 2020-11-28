@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AIDLClient/AIDLClient.iml" filepath="$PROJECT_DIR$/AIDLClient/AIDLClient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AIDLStudy.iml" filepath="$PROJECT_DIR$/AIDLStudy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AIDLStudy.iml" filepath="$PROJECT_DIR$/.idea/modules/AIDLStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AIDLClient/AIDLStudy.AIDLClient.iml" filepath="$PROJECT_DIR$/.idea/modules/AIDLClient/AIDLStudy.AIDLClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AIDLStudy.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AIDLStudy.app.iml" />
     </modules>
   </component>
 </project>
